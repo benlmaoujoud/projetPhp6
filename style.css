@@ -1,0 +1,258 @@
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+    background: #f6f5f7;
+    color: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+	height: 100vh;
+	
+	
+}
+
+h1{
+
+	font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+ h1.right_we {
+	font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+	font-size: 50px;
+    position: absolute;
+    top: 78px;
+} 
+h1.aff_tab {
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+	font-size: 20px;
+    color:#000000;
+    position: absolute;
+    top: 40px;
+
+}
+
+ h2 {
+	text-align: center;
+} 
+
+p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+.num_pays{
+	font-size: 80px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+    position: absolute;
+    bottom: 240px;
+
+}
+
+span {
+	font-size: 12px;
+}
+
+a {
+	color: #fff;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+
+button {
+    border-radius: 20px;
+	border: 1px solid #ffad1f;
+	background-color: #ffad1f;
+    color: #fff;
+	font-size: 12px;
+    font-weight:lighter;
+	margin-top: 20px;
+	padding: 12px 25px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+
+    border-radius: 20px;
+	background-color: transparent;
+	border-color: #FFFFFF;
+    margin-bottom: -240px;
+    padding: 12px 100px;
+}
+.ghost1 {	
+    border-radius: 20px;
+
+    background-color: transparent;
+	position: absolute;
+	top: -19.5px;
+	left: -20px;
+
+}
+i {
+	font-size: 30px;
+    color:#000000;
+    
+}
+
+form {
+	background-color: #000000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+}
+
+input {
+    border-radius: 10px;
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+
+.container {
+	background-color: #fff;  	
+	overflow: hidden;
+	width: 100%;
+	max-width: 100%;
+	min-height: 100%;
+}
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.s1-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.container.right-panel-active .s1-in-container {
+	transform: translateX(100%);
+}
+
+.search-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.container.right-panel-active .search-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.mpays-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.container.right-panel-active .mpays-container{
+	transform: translateX(-100%);
+}
+
+.mpays {
+	background: #ffc052;
+	background: -webkit-linear-gradient(to right, #ffad1f, #ffc052);
+	background: linear-gradient(to right, #ffad1f, #ffc052);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .mpays {
+  	transform: translateX(50%);
+}
+
+.mpays-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.mpays-left {
+	transform: translateX(-20%);
+}
+
+.container.right-panel-active .mpays-left {
+	transform: translateX(0);
+}
+
+.mpays-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.container.right-panel-active .mpays-right {
+	transform: translateX(20%);
+}
+
+.error {
+    color: #FF0000;
+}
